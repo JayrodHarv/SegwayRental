@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFPresentation", "WPFPresentation\WPFPresentation.csproj", "{4C241423-EC2F-4F4A-9416-F7F28BC35C1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{51B26650-B89D-48CC-A4A7-E75230015955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{074ABC7A-BB3D-4F5E-B443-95D3B1C2F7A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataObjects", "DataObjects\DataObjects.csproj", "{C1516C51-468A-49F6-BFE2-BE66393787B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessFakes", "DataAccessFakes\DataAccessFakes.csproj", "{11D8BF48-27F2-4E2D-9960-C010E730AF66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayerTests", "LogicLayerTests\LogicLayerTests.csproj", "{ACDD12EF-45AE-4A42-90BA-0A3DFDA52801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessInterfaces", "DataAccessInterfaces\DataAccessInterfaces.csproj", "{11AAFF4D-7CB9-46BB-9454-181F954B314A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C241423-EC2F-4F4A-9416-F7F28BC35C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C241423-EC2F-4F4A-9416-F7F28BC35C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C241423-EC2F-4F4A-9416-F7F28BC35C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C241423-EC2F-4F4A-9416-F7F28BC35C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B26650-B89D-48CC-A4A7-E75230015955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B26650-B89D-48CC-A4A7-E75230015955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B26650-B89D-48CC-A4A7-E75230015955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B26650-B89D-48CC-A4A7-E75230015955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074ABC7A-BB3D-4F5E-B443-95D3B1C2F7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074ABC7A-BB3D-4F5E-B443-95D3B1C2F7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074ABC7A-BB3D-4F5E-B443-95D3B1C2F7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074ABC7A-BB3D-4F5E-B443-95D3B1C2F7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1516C51-468A-49F6-BFE2-BE66393787B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1516C51-468A-49F6-BFE2-BE66393787B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1516C51-468A-49F6-BFE2-BE66393787B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1516C51-468A-49F6-BFE2-BE66393787B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D8BF48-27F2-4E2D-9960-C010E730AF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D8BF48-27F2-4E2D-9960-C010E730AF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D8BF48-27F2-4E2D-9960-C010E730AF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D8BF48-27F2-4E2D-9960-C010E730AF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACDD12EF-45AE-4A42-90BA-0A3DFDA52801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACDD12EF-45AE-4A42-90BA-0A3DFDA52801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACDD12EF-45AE-4A42-90BA-0A3DFDA52801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACDD12EF-45AE-4A42-90BA-0A3DFDA52801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AAFF4D-7CB9-46BB-9454-181F954B314A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AAFF4D-7CB9-46BB-9454-181F954B314A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AAFF4D-7CB9-46BB-9454-181F954B314A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AAFF4D-7CB9-46BB-9454-181F954B314A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CBED355-4836-4789-A0B8-9C04D92C8352}
+	EndGlobalSection
+EndGlobal

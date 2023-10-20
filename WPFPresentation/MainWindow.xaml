@@ -1,0 +1,92 @@
+﻿<Window x:Class="WPFPresentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFPresentation"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Segway Rental System" Height="800" Width="1200" Loaded="Window_Loaded"
+        MinWidth="900">
+        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Padding="20px, 0px">
+            <MenuItem x:Name="mnuFile" Header="File">
+                <MenuItem x:Name="mnuExit" Header="Exit" Click="mnuExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="mnuEdit" Header="Edit">
+                <MenuItem x:Name="mnuUpdatePassword" Header="Update Password" Click="mnuUpdatePassword_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="mnuHelp" Header="Help">
+                <MenuItem x:Name="mnuAbout" Header="About"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <!-- This grid is inside the main grid -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="250px"/>
+                <ColumnDefinition Width="250px"/>
+                <ColumnDefinition Width="125px"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtEmail" Grid.Row="0" Grid.Column="1" Margin="5px"  
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <PasswordBox x:Name="pwdPassword" Grid.Row="0" Grid.Column="2" Margin="5px"  
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label x:Name="lblEmail" Grid.Row="1" Grid.Column="1" FontWeight="Bold"
+                   VerticalAlignment="Top" Content="Email Address" HorizontalContentAlignment="Center" />
+            <Label x:Name="lblPassword" Grid.Row="1" Grid.Column="2" FontWeight="Bold"
+                   VerticalAlignment="Top" Content="Password" HorizontalContentAlignment="Center" />
+            <Button x:Name="btnLogin" Content="Log In"
+                    Grid.Column="3" Grid.RowSpan="2"
+                    FontWeight="Bold" Height="35px" Margin="5" Click="btnLogin_Click" />
+            <Label x:Name="lblGreeting" Content="You are not currently logged in"
+                   FontWeight="Bold" Grid.Column="0" Grid.RowSpan="2" 
+                   Padding="20px, 0px" VerticalContentAlignment="Center" />
+        </Grid>
+        <!-- This grid is inside the main grid -->
+        <StackPanel x:Name="tabContainer" Grid.Row="3">
+            <TabControl x:Name="tabsetMain">
+                <TabItem x:Name="tabRental" Header="Segways Available for Rent" FontSize="14">
+                    <Label Content="rental tab"/>
+                </TabItem>
+                <TabItem x:Name="tabTour" Header="Upcoming Tours" FontSize="14">
+                    <Label Content="tour guide tab"/>
+                </TabItem>
+                <TabItem x:Name="tabCheckIn" Header="Segways Out with Customers" FontSize="14">
+                    <Label Content="checkin tab"/>
+                </TabItem>
+                <TabItem x:Name="tabPrep" Header="Segways to be Preped for Rental" FontSize="14">
+                    <Label Content="prep tab"/>
+                </TabItem>
+                <TabItem x:Name="tabMaintenance" Header="Maintenance List" FontSize="14">
+                    <Label Content="maintenance tab"/>
+                </TabItem>
+                <TabItem x:Name="tabManager" Header="Inventory Managment" FontSize="14">
+                    <Label Content="managment tab"/>
+                </TabItem>
+                <TabItem x:Name="tabAdmin" Header="User Administration" FontSize="14">
+                    <Label Content="admin tab"/>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+
+        <StatusBar Grid.Row="5">
+            <StatusBarItem x:Name="statMessage" 
+                Content="Welcome. Please login to continue"
+                Padding="20px, 0px" />
+        </StatusBar>
+    </Grid>
+</Window>
