@@ -105,10 +105,10 @@ namespace WPFPresentation {
             // clear the login section
             txtEmail.Text = "";
             txtEmail.Visibility = Visibility.Hidden;
-            lblEmail.Visibility = Visibility.Visible;
+            lblEmail.Visibility = Visibility.Hidden;
             pwdPassword.Password = "";
             pwdPassword.Visibility = Visibility.Hidden;
-            lblPassword.Visibility = Visibility.Visible;
+            lblPassword.Visibility = Visibility.Hidden;
 
             btnLogin.Content = "Log Out";
             btnLogin.IsDefault = false;
@@ -172,8 +172,28 @@ namespace WPFPresentation {
                     loggedInEmployee = _employeeManager.LoginEmployee(email, password);
 
                     // we need to check for first login for new user
+                    if(pwdPassword.Password == "newuser") {
+                        try {
+                            var passwordWindow = new PasswordChangeWindow(loggedInEmployee.Email);
+                            var result = passwordWindow.ShowDialog();
+                            if (result == true) {
+                                MessageBox.Show("Password changed.", "Success",
+                                    MessageBoxButton.OK, MessageBoxImage.Information);
+                            } else {
+                                MessageBox.Show("Password not changed. \nYou must change your password to continue", "Logging Out",
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                                updateUIForLogout();
+                                return;
+                            }
+                        } catch (Exception ex) {
+                            MessageBox.Show(ex.Message + "\n\n" + ex.InnerException.Message,
+                                "Update failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                            updateUIForLogout();
+                            return;
+                        }
+                    }
 
-                    // update the UI
+                    // update the UI if employee is logged in and if newuser has updated password.
                     updateUIForEmployee();
 
                 } catch (Exception ex) {
