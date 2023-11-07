@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="EmployeeManager.cs" />
     <Compile Include="IEmployeeManager.cs" />
+    <Compile Include="ISegwayManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SegwayManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessFakes\DataAccessFakes.csproj">

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="EmployeeAccessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SegwayAccessor.cs" />
     <Compile Include="SqlConnectionProvider.cs" />
   </ItemGroup>
   <ItemGroup>
