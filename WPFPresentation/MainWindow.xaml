@@ -59,8 +59,12 @@
         <!-- This grid is inside the main grid -->
         <StackPanel x:Name="tabContainer" Grid.Row="3">
             <TabControl x:Name="tabsetMain">
-                <TabItem x:Name="tabRental" Header="Segways Available for Rent" FontSize="14">
-                    <Label Content="rental tab"/>
+                <TabItem x:Name="tabRental" Header="Segways Available for Rent" FontSize="14" GotFocus="tabRental_GotFocus">
+                    <Grid>
+                        <Label Content="rental tab"/>
+                        <DataGrid x:Name="datRental" SelectionMode="Single" ToolTip="Double-Click an item to see details."
+                                  IsReadOnly="True" MouseDoubleClick="datRental_MouseDoubleClick"/>
+                    </Grid>
                 </TabItem>
                 <TabItem x:Name="tabTour" Header="Upcoming Tours" FontSize="14">
                     <Label Content="tour guide tab"/>

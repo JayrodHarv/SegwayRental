@@ -239,5 +239,27 @@ namespace WPFPresentation {
         private void mnuExit_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
+
+        private void tabRental_GotFocus(object sender, RoutedEventArgs e) {
+            try {
+                if (datRental.ItemsSource == null) {
+                    var segwayManger = new SegwayManager();
+                    datRental.ItemsSource = segwayManger.GetSegwaysByStatusID("For Rent");
+                    datRental.Columns.RemoveAt(5);
+                    datRental.Columns.RemoveAt(4);
+
+                    datRental.Columns[0].Header = "Segway ID";
+                    datRental.Columns[3].Header = "Type";
+                }
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void datRental_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
+            var segway = datRental.SelectedItem as Segway;
+            MessageBox.Show("You chose " + segway.Color + " " + segway.Name);
+        }
     }
 }

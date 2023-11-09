@@ -21,12 +21,12 @@ namespace LogicLayer {
         
 
         public List<Segway> GetSegwaysByStatusID(string statusID) {
-            List<Segway> segways = new List<Segway>();
+            List<Segway> segways = null;
 
             try {
                 segways = _segwayAccessor.SelectSegwaysByStatusID(statusID);
 
-                if(segways.Count == 0) {
+                if(segways == null || segways.Count == 0) {
                     throw new ArgumentException("Segways not found");
                 }
             } catch (Exception ex) {
