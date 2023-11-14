@@ -259,7 +259,9 @@ namespace WPFPresentation {
 
         private void datRental_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
             var segway = datRental.SelectedItem as Segway;
-            MessageBox.Show("You chose " + segway.Color + " " + segway.Name);
+            // MessageBox.Show("You chose " + segway.Color + " " + segway.Name);
+            var addEditWindow = new SegwayAddEditDetail(segway);
+            addEditWindow.ShowDialog();
         }
     }
 }

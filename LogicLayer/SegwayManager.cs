@@ -35,5 +35,37 @@ namespace LogicLayer {
 
             return segways;
         }
+
+        public List<string> GetAllStatuses() {
+            List<string> statuses = new List<string>();
+
+            try {
+                statuses = _segwayAccessor.SelectAllStatuses();
+
+                if (statuses.Count == 0) {
+                    throw new ArgumentException("Statuses not found");
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+
+            return statuses;
+        }
+
+        public List<string> GetAllTypes() {
+            List<string> types = new List<string>();
+
+            try {
+                types = _segwayAccessor.SelectAllTypes();
+
+                if (types.Count == 0) {
+                    throw new ArgumentException("Types not found");
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
+
+            return types;
+        }
     }
 }

@@ -37,6 +37,14 @@ namespace DataAccessFakes {
             });
         }
 
+        public List<string> SelectAllStatuses() {
+            throw new NotImplementedException();
+        }
+
+        public List<string> SelectAllTypes() {
+            throw new NotImplementedException();
+        }
+
         public List<Segway> SelectSegwaysByStatusID(string statusID) {
             return _segways.FindAll(s => s.StatusID == statusID); // Lambda for the win
         }

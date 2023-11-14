@@ -8,5 +8,7 @@ using System.Threading.Tasks;
 namespace DataAccessInterfaces {
     public interface ISegwayAccessor {
         List<Segway> SelectSegwaysByStatusID(string statusID);
+        List<string> SelectAllStatuses();
+        List<string> SelectAllTypes();
     }
 }

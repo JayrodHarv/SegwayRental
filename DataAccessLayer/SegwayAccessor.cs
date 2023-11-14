@@ -62,5 +62,85 @@ namespace DataAccessLayer {
 
             return segways;
         }
+
+        public List<string> SelectAllStatuses() {
+            List<string> result = new List<string>();
+
+            // connection
+            var conn = SqlConnectionProvider.GetConnection();
+
+            // command text
+            var cmdText = "sp_select_all_statuses";
+
+            // create command
+            var cmd = new SqlCommand(cmdText, conn);
+
+            // set command type
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try {
+                // open connection
+                conn.Open();
+
+                // execute command
+                var reader = cmd.ExecuteReader();
+
+                // process results
+                if (reader.HasRows) {
+                    while (reader.Read()) {
+                        result.Add(reader.GetString(0));
+                    }
+                } else {
+                    throw new ArgumentException("Statuses not found");
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                conn.Close();
+            }
+
+            return result;
+        }
+
+        public List<string> SelectAllTypes() {
+            List<string> result = new List<string>();
+
+            // connection
+            var conn = SqlConnectionProvider.GetConnection();
+
+            // command text
+            var cmdText = "sp_select_all_types";
+
+            // create command
+            var cmd = new SqlCommand(cmdText, conn);
+
+            // set command type
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try {
+                // open connection
+                conn.Open();
+
+                // execute command
+                var reader = cmd.ExecuteReader();
+
+                // process results
+                if (reader.HasRows) {
+                    while (reader.Read()) {
+                        result.Add(reader.GetString(0));
+                    }
+                } else {
+                    throw new ArgumentException("Types not found");
+                }
+
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                conn.Close();
+            }
+
+            return result;
+        }
     }
 }
