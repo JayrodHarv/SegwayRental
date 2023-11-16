@@ -47,5 +47,52 @@ namespace WPFPresentation {
             cboStatus.IsReadOnly = true;
             chkActive.IsEnabled = false;
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e) {
+            if(btnAdd.Content.ToString() == "Add") {
+                btnEdit.IsEnabled = false;
+                txtSegwayID.Text = "";
+                txtName.Text = "";
+                txtColor.Text = "";
+                cboStatus.Text = "";
+                cboType.Text = "";
+                chkActive.IsChecked = true;
+
+                txtSegwayID.IsReadOnly = false;
+                txtName.IsReadOnly = false;
+                txtColor.IsReadOnly = false;
+                cboStatus.IsReadOnly = false;
+                cboType.IsReadOnly = false;
+
+                btnAdd.Content = "Save";
+            } else if(btnAdd.Content.ToString() == "Save") {
+                if(txtSegwayID.Text == "" || txtName.Text == "" || txtColor.Text == "" || cboStatus.Text == "" || cboType.Text == "" ) {
+                    MessageBox.Show("Please fill out all fields");
+                    txtSegwayID.Focus();
+                    return;
+                }
+
+                var newSegway = new Segway() {
+                    SegwayID = txtSegwayID.Text,
+                    Name = txtName.Text,
+                    Color = txtColor.Text,
+                    TypeID = cboType.Text,
+                    StatusID = cboStatus.Text
+                };
+
+                try {
+                    var sm = new SegwayManager();
+                    bool result = sm.AddSegway(newSegway);
+                    this.Close();
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

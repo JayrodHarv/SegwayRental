@@ -54,8 +54,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Margin="5" Content="Edit" FontWeight="SemiBold"/>
-            <Button Grid.Column="1" Margin="5" Content="Add" FontWeight="SemiBold"/>
+            <Button x:Name="btnEdit" Margin="5" Content="Edit" FontWeight="SemiBold" Click="btnEdit_Click"/>
+            <Button x:Name="btnAdd" Grid.Column="1" Margin="5" Content="Add" FontWeight="SemiBold" Click="btnAdd_Click"/>
         </Grid>
     </Grid>
 </Window>

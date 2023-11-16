@@ -142,5 +142,47 @@ namespace DataAccessLayer {
 
             return result;
         }
+
+        public int UpdateSegway(Segway oldSegway, Segway newSegway) {
+            throw new NotImplementedException();
+        }
+
+        public int InsertSegway(Segway segway) {
+            int result = 0;
+
+            // connection
+            var conn = SqlConnectionProvider.GetConnection();
+
+            // command text
+            var cmdText = "sp_insert_segway";
+
+            // create command
+            var cmd = new SqlCommand(cmdText, conn);
+
+            // set command type
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // add parameters to command
+            cmd.Parameters.AddWithValue("@SegwayID", segway.SegwayID);
+            cmd.Parameters.AddWithValue("@Color", segway.Color);
+            cmd.Parameters.AddWithValue("@Name", segway.Name);
+            cmd.Parameters.AddWithValue("@TypeID", segway.TypeID);
+            cmd.Parameters.AddWithValue("@StatusID", segway.StatusID);
+
+            try {
+                // open connection
+                conn.Open();
+
+                // execute command
+                result = cmd.ExecuteNonQuery();
+
+            } catch (Exception ex) {
+                throw ex;
+            } finally {
+                conn.Close();
+            }
+
+            return result;
+        }
     }
 }

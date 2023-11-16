@@ -262,6 +262,7 @@ namespace WPFPresentation {
             // MessageBox.Show("You chose " + segway.Color + " " + segway.Name);
             var addEditWindow = new SegwayAddEditDetail(segway);
             addEditWindow.ShowDialog();
+            datRental.ItemsSource = new SegwayManager().GetSegwaysByStatusID("For Rent");
         }
     }
 }

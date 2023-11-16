@@ -67,5 +67,25 @@ namespace LogicLayer {
 
             return types;
         }
+
+        public bool AddSegway(Segway segway) {
+            bool result = false;
+            try {
+                result = (1 == _segwayAccessor.InsertSegway(segway));
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return result;
+        }
+
+        public bool EditSegway(Segway oldSegway, Segway newSegway) {
+            bool result = false;
+            try {
+                result = (1 == _segwayAccessor.UpdateSegway(oldSegway, newSegway));
+            } catch (Exception ex) {
+                throw ex;
+            }
+            return result;
+        }
     }
 }

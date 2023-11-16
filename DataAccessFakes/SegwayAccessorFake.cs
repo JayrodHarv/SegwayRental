@@ -37,6 +37,10 @@ namespace DataAccessFakes {
             });
         }
 
+        public int InsertSegway(Segway segway) {
+            throw new NotImplementedException();
+        }
+
         public List<string> SelectAllStatuses() {
             throw new NotImplementedException();
         }
@@ -47,6 +51,10 @@ namespace DataAccessFakes {
 
         public List<Segway> SelectSegwaysByStatusID(string statusID) {
             return _segways.FindAll(s => s.StatusID == statusID); // Lambda for the win
+        }
+
+        public int UpdateSegway(Segway oldSegway, Segway newSegway) {
+            throw new NotImplementedException();
         }
     }
 }

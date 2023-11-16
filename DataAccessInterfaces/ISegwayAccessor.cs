@@ -10,5 +10,7 @@ namespace DataAccessInterfaces {
         List<Segway> SelectSegwaysByStatusID(string statusID);
         List<string> SelectAllStatuses();
         List<string> SelectAllTypes();
+        int UpdateSegway(Segway oldSegway, Segway newSegway);
+        int InsertSegway(Segway segway);
     }
 }
